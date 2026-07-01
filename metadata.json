@@ -1,0 +1,6 @@
+{
+  "name": "Verse Web3 Hub",
+  "description": "An interactive, beginner-friendly Web3 learning experience featuring custom educational modules, a live block simulator, and a blockchain quiz.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
