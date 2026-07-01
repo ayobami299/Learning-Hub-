@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowUpDown, RefreshCw, Info, InfoIcon, Coins, TrendingUp } from "lucide-react";
+import GlossaryTooltip from "./GlossaryTooltip";
 
 export default function DeFiSwapDemo() {
   // Constant Product Formula State
@@ -163,7 +164,7 @@ export default function DeFiSwapDemo() {
               <span className="font-mono text-white">1 VERSE = {currentSpotPrice} USDC</span>
             </div>
             <div className="flex justify-between text-slate-400">
-              <span>Price Impact:</span>
+              <span><GlossaryTooltip term="Price Impact" />:</span>
               <span className={`font-semibold ${priceImpact > 10 ? "text-red-400" : priceImpact > 3 ? "text-amber-400" : "text-emerald-400"}`}>
                 {priceImpact > 0 ? `${priceImpact}%` : "0%"}
               </span>
@@ -176,7 +177,10 @@ export default function DeFiSwapDemo() {
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-indigo-400 font-bold text-sm">
               <TrendingUp className="w-4 h-4" />
-              <span>Liquidity Pool Equation (x × y = k)</span>
+              <span>
+                <GlossaryTooltip term="Liquidity Pool">Liquidity Pool</GlossaryTooltip> Equation (
+                <GlossaryTooltip term="Constant Product Formula">x × y = k</GlossaryTooltip>)
+              </span>
             </div>
             
             <p className="text-xs text-slate-400 leading-normal">

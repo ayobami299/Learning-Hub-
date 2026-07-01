@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Key, Shield, RefreshCw, Copy, Eye, EyeOff, Check, ArrowRight } from "lucide-react";
+import GlossaryTooltip from "./GlossaryTooltip";
 
 const SEED_PHRASE_WORDS = [
   "apple", "banana", "galaxy", "pioneer", "orbital", "canvas",
@@ -59,7 +60,7 @@ export default function WalletDemo() {
         <div>
           <h3 className="text-xl font-bold text-white">Crypto Wallets 101</h3>
           <p className="text-sm text-slate-400 mt-1">
-            Generate your own mock wallet and see how asymmetric cryptography works.
+            Generate your own mock wallet and see how <GlossaryTooltip term="Asymmetric Cryptography" /> works.
           </p>
         </div>
       </div>
@@ -68,7 +69,7 @@ export default function WalletDemo() {
         <div className="space-y-4">
           <div className="bg-slate-950/50 rounded-xl p-4 border border-slate-800 text-sm text-slate-300">
             <p className="leading-relaxed">
-              🔑 <strong className="text-indigo-400">Concept:</strong> A wallet doesn't store coins. It's just a key pair generator. Your <span className="text-emerald-400 font-semibold">Public Key</span> is like your public email address, and your <span className="text-amber-400 font-semibold">Seed Phrase</span> is your master password to unlock it.
+              🔑 <strong className="text-indigo-400">Concept:</strong> A wallet doesn't store coins. It's just a key pair generator. Your <span className="text-emerald-400 font-semibold"><GlossaryTooltip term="Public Key" /></span> is like your public email address, and your <span className="text-amber-400 font-semibold"><GlossaryTooltip term="Seed Phrase" /></span> is your master password to unlock it.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -95,7 +96,7 @@ export default function WalletDemo() {
             <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-900/30">
-                  Public Key (Your Address)
+                  <GlossaryTooltip term="Public Key">Public Key</GlossaryTooltip> (Your Address)
                 </span>
                 <span className="text-[10px] text-slate-500">Like your email address</span>
               </div>
@@ -115,7 +116,7 @@ export default function WalletDemo() {
             <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] uppercase tracking-wider text-amber-500 font-bold bg-amber-950/60 px-2 py-0.5 rounded border border-amber-900/30">
-                  Private Key (Signing Key)
+                  <GlossaryTooltip term="Private Key">Private Key</GlossaryTooltip> (Signing Key)
                 </span>
                 <span className="text-[10px] text-slate-500">Like your banking password</span>
               </div>
@@ -139,7 +140,7 @@ export default function WalletDemo() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4 text-indigo-400" />
-                <span className="text-sm font-bold text-white">Your 12-Word Seed Phrase (Mnemonic)</span>
+                <span className="text-sm font-bold text-white">Your 12-Word <GlossaryTooltip term="Seed Phrase" /> (Mnemonic)</span>
               </div>
               <button
                 onClick={() => setShowSeed(!showSeed)}

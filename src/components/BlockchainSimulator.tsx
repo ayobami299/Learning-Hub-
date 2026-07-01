@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link2, AlertTriangle, Hammer, Trash2, Plus, RefreshCw, Lock, Unlock, CheckCircle2 } from "lucide-react";
 import { Block } from "../types";
+import GlossaryTooltip from "./GlossaryTooltip";
 
 // Fast, deterministic hash function that produces a realistic 32-character hexadecimal string.
 // If difficultyPrefix is provided, we can simulate hashing until the prefix matches.
@@ -211,7 +212,7 @@ export default function BlockchainSimulator() {
             Interactive Blockchain Builder
           </h2>
           <p className="text-sm text-slate-400 mt-1">
-            Build, tamper, and secure a live cryptographic ledger. See how hacking one block breaks the entire history.
+            Build, tamper, and secure a live <GlossaryTooltip term="Decentralized Ledger">cryptographic ledger</GlossaryTooltip>. See how hacking one block breaks the entire history.
           </p>
         </div>
 
@@ -286,7 +287,7 @@ export default function BlockchainSimulator() {
                         </span>
                         {idx === 0 && (
                           <span className="text-[10px] bg-emerald-950/80 text-emerald-400 px-1.5 py-0.5 rounded-md border border-emerald-900/30 font-medium">
-                            Genesis
+                            <GlossaryTooltip term="Genesis Block">Genesis</GlossaryTooltip>
                           </span>
                         )}
                       </div>
@@ -320,7 +321,7 @@ export default function BlockchainSimulator() {
                       <div className="space-y-2 text-[11px] bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/30 font-mono">
                         <div>
                           <div className="flex justify-between text-[10px] text-slate-500 font-bold uppercase mb-0.5">
-                            <span>Previous Hash</span>
+                            <span>Previous <GlossaryTooltip term="Hash" /></span>
                             {!block.isPrevHashMatching && idx > 0 && (
                               <span className="text-red-400 flex items-center gap-0.5">
                                 <AlertTriangle className="w-3 h-3" /> Mismatch
@@ -334,7 +335,7 @@ export default function BlockchainSimulator() {
 
                         <div>
                           <div className="flex justify-between text-[10px] text-slate-500 font-bold uppercase mb-0.5">
-                            <span>Current Hash</span>
+                            <span>Current <GlossaryTooltip term="Hash" /></span>
                             {!block.isValid && !block.isPoWValid && (
                               <span className="text-amber-400 flex items-center gap-0.5">
                                 <Unlock className="w-3 h-3" /> No PoW
@@ -352,7 +353,7 @@ export default function BlockchainSimulator() {
 
                         {/* Nonce Proof Display */}
                         <div className="flex items-center justify-between text-[10px] pt-1 text-slate-500">
-                          <span>Mining Nonce (PoW):</span>
+                          <span><GlossaryTooltip term="Proof of Work">Mining Nonce (PoW)</GlossaryTooltip>:</span>
                           <span className="text-indigo-300 font-bold bg-indigo-950/40 border border-indigo-900/40 px-1.5 py-0.5 rounded-md">
                             {block.nonce}
                           </span>

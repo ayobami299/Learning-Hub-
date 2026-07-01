@@ -8,6 +8,7 @@ import { Wallet, ShieldCheck, Cpu, HelpCircle, GraduationCap, ChevronRight, Spar
 import LearnModules from "./components/LearnModules";
 import BlockchainSimulator from "./components/BlockchainSimulator";
 import Web3Quiz from "./components/Web3Quiz";
+import AppGuide from "./components/AppGuide";
 import { WalletState } from "./types";
 
 export default function App() {
@@ -80,6 +81,7 @@ export default function App() {
             )}
             
             <button
+              id="wallet-connect-btn"
               onClick={toggleWalletConnection}
               disabled={isConnecting}
               className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 border cursor-pointer ${
@@ -168,6 +170,7 @@ export default function App() {
           <a href="#quiz-section" className="hover:text-slate-300 transition-colors">Quiz Challenge</a>
         </div>
       </footer>
+      <AppGuide />
     </div>
   );
 }

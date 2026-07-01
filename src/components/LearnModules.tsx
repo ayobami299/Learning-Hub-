@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Shield, BookOpen, Smartphone, Sparkles, Check, AlertOctagon, HelpCircle } from "lucide-react";
 import WalletDemo from "./WalletDemo";
 import DeFiSwapDemo from "./DeFiSwapDemo";
+import GlossaryTooltip from "./GlossaryTooltip";
 
 const MODULES = [
   {
@@ -160,7 +161,9 @@ export default function LearnModules() {
 
               <div className="mt-5 pt-3 border-t border-slate-900/80 text-[10px] text-slate-500 flex items-center justify-between w-full">
                 <span>Concept:</span>
-                <span className="font-mono text-slate-300 font-semibold">{mod.concept}</span>
+                <span className="font-mono text-slate-300 font-semibold">
+                  <GlossaryTooltip term={mod.concept} align={mod.id === "security" ? "right" : "center"} />
+                </span>
               </div>
             </button>
           );
