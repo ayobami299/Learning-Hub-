@@ -8,7 +8,7 @@ import { Wallet, ShieldCheck, Cpu, HelpCircle, GraduationCap, ChevronRight, Spar
 import LearnModules from "./components/LearnModules";
 import BlockchainSimulator from "./components/BlockchainSimulator";
 import Web3Quiz from "./components/Web3Quiz";
-import AppGuide from "./components/AppGuide";
+import SimpleAppGuide from "./components/SimpleAppGuide";
 import { WalletState } from "./types";
 
 export default function App() {
@@ -136,6 +136,9 @@ export default function App() {
           </div>
         </section>
 
+        {/* APP USER GUIDE */}
+        <SimpleAppGuide />
+
         {/* SECTION 1: CORE MODULES */}
         <hr className="border-slate-900" />
         <LearnModules />
@@ -170,7 +173,6 @@ export default function App() {
           <a href="#quiz-section" className="hover:text-slate-300 transition-colors">Quiz Challenge</a>
         </div>
       </footer>
-      <AppGuide />
     </div>
   );
 }
